@@ -1,4 +1,5 @@
 import { Controller, UseGuards, Post, Body } from "@nestjs/common"
+import { ThrottlerGuard } from "@nestjs/throttler"
 
 import { AuthSignupSchema } from "@schemas/auth-signup.schema"
 import { AuthSignupGuard } from "@guards/auth-signup.guard"
@@ -8,7 +9,7 @@ import { AuthService } from "@services/auth.service"
 export class AuthController {
     constructor(private readonly authService: AuthService) {}
 
-    @UseGuards(AuthSignupGuard)
+    @UseGuards(ThrottlerGuard, AuthSignupGuard)
     @Post("/signup")
     async authSignup(@Body() body: AuthSignupSchema) {
         return await this.authService.authSignup(body)
