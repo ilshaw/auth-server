@@ -31,10 +31,14 @@
       "@types/*": ["./src/common/types/*"],
       "@core/*": ["./src/core/*"],
       "@controllers/*": ["./src/core/controllers/*"],
+      "@filters/*": ["./src/core/filters/*"],
+      "@guards/*": ["./src/core/guards/*"],
+      "@interceptors/*": ["./src/core/interceptors/*"],
       "@middlewares/*": ["./src/core/middlewares/*"],
       "@modules/*": ["./src/core/modules/*"],
       "@repositories/*": ["./src/core/repositories/*"],
-      "@services/*": ["./src/core/services/*"]
+      "@services/*": ["./src/core/services/*"],
+      "@strategies/*": ["./src/core/strategies/*"]
     }
   }
 }
