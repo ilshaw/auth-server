@@ -19,6 +19,13 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@src/*": ["./src/*"],
+      "@common/*": ["./src/common/*"],
+      "@classes/*": ["./src/common/classes/*"],
+      "@enums/*": ["./src/common/enums/*"],
+      "@exceptions/*": ["./src/common/exceptions/*"],
+      "@interfaces/*": ["./src/common/interfaces/*"],
+      "@responses/*": ["./src/common/responses/*"],
+      "@types/*": ["./src/common/types/*"],
       "@core/*": ["./src/core/*"],
       "@controllers/*": ["./src/core/controllers/*"],
       "@modules/*": ["./src/core/modules/*"],
