@@ -3,7 +3,7 @@ import { Injectable } from "@nestjs/common"
 
 @Injectable()
 export class ConfigService {
-    constructor(private nestConfigService: NestConfigService) {}
+    constructor(private readonly nestConfigService: NestConfigService) {}
 
     getRefreshCookieSameSite() {
         return this.nestConfigService.get("REFRESH_COOKIE_SAME_SITE")
