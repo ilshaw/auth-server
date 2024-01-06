@@ -1,0 +1,27 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = "postgresql://postgres:postgres@localhost:5432/nest?schema=public"
+}
+
+enum Role {
+    user @map("user")
+}
+
+model User {
+    id         String   @map("id")         @default(uuid())
+    role       Role     @map("role")       @default(user)
+    login      String   @map("login")
+    password   String   @map("password")
+    confirmed  Boolean  @map("confirmed")  @default(false)
+
+    created_at DateTime @map("created_at") @default(now())
+    updated_at DateTime @map("updated_at") @updatedAt
+
+    @@id([id])
+    @@map("users")
+    @@unique([login])
+}

@@ -6,6 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "migrate:dev": "prisma migrate dev",
+    "migrate:prod": "prisma migrate prod",
     "start:dev": "nest start --watch",
     "start:prod": "nest start",
     "lint": "eslint ./src/**/*.ts --fix",
@@ -15,6 +17,7 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "prisma": "^5.7.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
