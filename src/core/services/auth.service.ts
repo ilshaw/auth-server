@@ -4,6 +4,7 @@ import { AuthSignupSchema } from "@schemas/auth-signup.schema"
 import { UserRepository } from "@repositories/user.repository"
 import { ResponseService } from "@services/response.service"
 import { BcryptService } from "@services/bcrypt.service"
+import { UserEntity } from "@entities/user.entity"
 
 @Injectable()
 export class AuthService {
@@ -19,5 +20,9 @@ export class AuthService {
         await this.userRepository.createByPasswordAndLogin(hash, body.login)
 
         return this.responseService.createdResponse("The user has been successfully signed up")
+    }
+
+    async authLogin(user: UserEntity) {
+        return this.responseService.createdResponse("The user has been successfully logged in")
     }
 }
