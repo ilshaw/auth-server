@@ -20,6 +20,7 @@
     "paths": {
       "@src/*": ["./src/*"],
       "@core/*": ["./src/core/*"],
+      "@controllers/*": ["./src/core/controllers/*"],
       "@modules/*": ["./src/core/modules/*"],
       "@services/*": ["./src/core/services/*"]
     }
