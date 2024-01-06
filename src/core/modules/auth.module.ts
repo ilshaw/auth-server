@@ -1,6 +1,7 @@
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from "@nestjs/common"
 
 import { AuthSignupMiddleware } from "@middlewares/auth-signup.middleware"
+import { AuthSignupStrategy } from "@strategies/auth-signup.strategy"
 import { UserRepository } from "@repositories/user.repository"
 import { AuthController } from "@controllers/auth.controller"
 import { ExceptionModule } from "@modules/exception.module"
@@ -12,7 +13,7 @@ import { AuthService } from "@services/auth.service"
 @Module({
     imports: [ExceptionModule, ExtractorModule, ResponseModule, BcryptModule],
     controllers: [AuthController],
-    providers: [UserRepository, AuthService]
+    providers: [AuthSignupStrategy, UserRepository, AuthService]
 })
 export class AuthModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
