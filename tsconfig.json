@@ -21,6 +21,7 @@
       "@src/*": ["./src/*"],
       "@common/*": ["./src/common/*"],
       "@classes/*": ["./src/common/classes/*"],
+      "@decorators/*": ["./src/common/decorators/*"],
       "@entities/*": ["./src/common/entities/*"],
       "@enums/*": ["./src/common/enums/*"],
       "@exceptions/*": ["./src/common/exceptions/*"],
