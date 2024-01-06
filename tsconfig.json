@@ -21,14 +21,17 @@
       "@src/*": ["./src/*"],
       "@common/*": ["./src/common/*"],
       "@classes/*": ["./src/common/classes/*"],
+      "@entities/*": ["./src/common/entities/*"],
       "@enums/*": ["./src/common/enums/*"],
       "@exceptions/*": ["./src/common/exceptions/*"],
       "@interfaces/*": ["./src/common/interfaces/*"],
       "@responses/*": ["./src/common/responses/*"],
+      "@schemas/*": ["./src/common/schemas/*"],
       "@types/*": ["./src/common/types/*"],
       "@core/*": ["./src/core/*"],
       "@controllers/*": ["./src/core/controllers/*"],
       "@modules/*": ["./src/core/modules/*"],
+      "@repositories/*": ["./src/core/repositories/*"],
       "@services/*": ["./src/core/services/*"]
     }
   }

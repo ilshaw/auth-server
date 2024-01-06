@@ -3,8 +3,12 @@ import { ResponseInterface } from "@interfaces/response.interface"
 import { StatusEnum } from "@enums/status.enum"
 
 export class ServerExceptionClass extends BaseExceptionClass {
-    constructor(response: ResponseInterface, status: StatusEnum, private readonly cause: CauseType) {
+    private readonly cause: CauseType
+
+    constructor(response: ResponseInterface, status: StatusEnum, cause: CauseType) {
         super(response, status)
+
+        this.cause = cause
     }
 
     public getCause() {
