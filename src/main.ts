@@ -1,5 +1,6 @@
 import { NestFactory } from "@nestjs/core"
 
+import { ThrottlerExceptionFilter } from "@filters/throttler-exception.filter"
 import { ExceptionInterceptor } from "@interceptors/exception.interceptor"
 import { ClientExceptionFilter } from "@filters/client-exception.filter"
 import { ServerExceptionFilter } from "@filters/server-exception.filter"
@@ -11,7 +12,12 @@ import { AppModule } from "@modules/app.module"
 async function bootstrap() {
     const app = await NestFactory.create(AppModule)
 
-    app.useGlobalFilters(new EveryExceptionFilter(), new ClientExceptionFilter(), new ServerExceptionFilter())
+    app.useGlobalFilters(
+        new EveryExceptionFilter(),
+        new ThrottlerExceptionFilter(),
+        new ClientExceptionFilter(),
+        new ServerExceptionFilter()
+    )
 
     app.useGlobalInterceptors(new ExceptionInterceptor(), new ResponseInterceptor())
 

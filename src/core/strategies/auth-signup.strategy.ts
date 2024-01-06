@@ -9,7 +9,10 @@ import { UserRepository } from "@repositories/user.repository"
 
 @Injectable()
 export class AuthSignupStrategy extends PassportStrategy(passportLocal.Strategy, "auth-signup") {
-    constructor(private readonly exceptionService: ExceptionService, private readonly userRepository: UserRepository) {
+    constructor(
+        private readonly exceptionService: ExceptionService,
+        private readonly userRepository: UserRepository
+    ) {
         super({
             passwordField: "password",
             usernameField: "login"
