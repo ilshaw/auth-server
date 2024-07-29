@@ -9,13 +9,15 @@ import { ExceptionModule } from "@core/modules/exception.module";
 import { ResponseModule } from "@core/modules/response.module";
 import { ConfigModule } from "@core/modules/config.module";
 import { PrismaModule } from "@core/modules/prisma.module";
+import { CqrsModule } from "@core/modules/cqrs.module";
 
 @Module({
     imports: [
         ExceptionModule,
         ResponseModule,
         ConfigModule,
-        PrismaModule
+        PrismaModule,
+        CqrsModule
     ],
     providers: [
         {
